@@ -12,18 +12,24 @@ MainDF <- read.csv(file_path, stringsAsFactors = FALSE)
 head(MainDF)
 
 df <- select(MainDF, id, spect)
-df
-head(df)
 
+# Eliminate Extra Sepctrum data
 for(n in names(df)) {
   df[n] <- data.frame(lapply(df[n], gsub, pattern="(/[A-Z][0-9]I*)",replacement= ""))
 }
-
 for(n in names(df)) {
-  df[n] <- data.frame(lapply(df[n], gsub, pattern="([A-Z][0-9])",replacement= paste(df[n], "I")))
+  df[n] <- data.frame(lapply(df[n], gsub, pattern="(-I*)|(-V)|(-IV)",replacement= ""))
+}
+for(n in names(df)) {
+  df[n] <- data.frame(lapply(df[n], gsub, pattern="(/I*)|(/V)|(/IV)",replacement= ""))
 }
 
+for(n in df("spect")) {}
+
 head(df)
+
+
+
 
 head(SCDF)
 SCDF <- rename(SCDF, spect = Class)
