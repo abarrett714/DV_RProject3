@@ -22,7 +22,7 @@ for(n in names(SCDF)) {
 
 #head(MainDF)
 
-df <- select(MainDF, id, spect, con)
+df <- select(MainDF, ID, SPECT, CON)
 
 # Eliminate Extra Sepctrum data
 for(n in names(df)) {
@@ -44,9 +44,9 @@ for(n in names(df)) {
 
 
 #head(SCDF)
-SCDF <- rename(SCDF, spect = Class)
+SCDF <- rename(SCDF, SPECT = CLASS)
 #head(SCDF)
-SCDF2 <- select(SCDF, spect, Hex)
+SCDF2 <- select(SCDF, SPECT, HEX)
 #head(SCDF2)
 
 head(MainDF)
@@ -55,21 +55,21 @@ head(SCDF)
 head(SCDF2)
 
 #the Join!
-jdf <- left_join(df, SCDF2, by = "spect")
+jdf <- left_join(df, SCDF2, by = "SPECT")
 #head(jdf)
 
 
-jdf <- jdf %>% filter(spect != "", !is.na(Hex)) %>% arrange(spect) %>% distinct()
+jdf <- jdf %>% filter(SPECT != "", !is.na(HEX)) %>% arrange(SPECT) %>% distinct()
 #jdf <- arrange(jdf, spect)
 #jdf <- distinct(jdf)
 
 head(jdf)
 
-hexdf <- jdf['Hex']
+hexdf <- jdf['HEX']
 
 #head(hexdf)
 hexdf <-distinct(hexdf)
-hexdf <- hexdf[,"Hex"]
+hexdf <- hexdf[,"HEX"]
 #head(hexdf)
 #hexdf
 
@@ -89,7 +89,7 @@ ggplot() +
         panel.grid.minor = element_line(colour = "black"))+
   theme(legend.position = "none")+
   layer(data=jdf, 
-        mapping=aes(as.character(Hex), y=as.character(con), color=Hex), 
+        mapping=aes(as.character(HEX), y=as.character(CON), color=HEX), 
         stat="identity", 
         stat_params=list(), 
         geom="point",

@@ -1,0 +1,17 @@
+---
+title: "Adam's Doc Text"
+author: "Adam"
+date: "October 16, 2015"
+output: html_document
+---
+
+2.) This Dataset combines two datasets: the HYG combined bright star catalog, and a dataset which details the hex code for each stellar spectrum classification.
+
+I used these two datasets to assign a hex code value to every star in the database which had a spectrum classification.
+
+I was then able to manipulate the ggplot manual legend function to assign a color to each spectrum based on its hex code.
+
+The resulting dataset displays the exact color of each star. The data is displayed in a way that shows each constellations spectral distribution.
+```{r}
+source("../02 Data Wrangling/Workflow2.R", echo = TRUE)
+```
