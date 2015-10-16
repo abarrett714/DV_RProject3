@@ -5,7 +5,7 @@ require("dplyr")
 
 dfhab <- dplyr::full_join(HAB, hygdf, by="hip")
 
-dfhab <- dfhab %>% select(hip, dist, con, mag) %>% filter(dist != 0, dist < 70, hip != 0, con != "")
+dfhab <- dfhab %>% select(hip, dist, con, mag) %>% mutate(dist_percent = cume_dist(dist)) %>% filter(dist != 0, dist_percent < .01, hip != 0, con != "")
 
 require(extrafont)
 ggplot() + 
@@ -23,4 +23,5 @@ ggplot() +
         geom="point",
         geom_params=list()
         #position=position_identity()
+        #position=position_jitter(width=0.1, height=0)
   )
