@@ -3,11 +3,15 @@ require(dplyr)
 require(ggplot2)
 require(utils)
 
-setwd("~/DataVisualization/DV_RProject3/01 Data")
+require("jsonlite")
+require("RCurl")
+MainDF <- data.frame(fromJSON(getURL(URLencode('129.152.144.84:5001/rest/native/?query="select * from HYGSTARDATA"'),httpheader=c(DB='jdbc:oracle:thin:@129.152.144.84:1521/PDBF15DV.usuniversi01134.oraclecloud.internal', USER='cs329e_apb766', PASS='orcl_apb766', MODE='native_mode', MODEL='model', returnDimensions = 'False', returnFor = 'JSON'), verbose = TRUE)))
 
-file_path <- "hygdata_v3.reformatted10k.csv"
+#setwd("~/DataVisualization/DV_RProject3/01 Data")
 
-MainDF <- read.csv(file_path, stringsAsFactors = FALSE)
+#file_path <- "hygdata_v3.reformatted10k.csv"
+
+#MainDF <- read.csv(file_path, stringsAsFactors = FALSE)
 
 head(MainDF)
 
