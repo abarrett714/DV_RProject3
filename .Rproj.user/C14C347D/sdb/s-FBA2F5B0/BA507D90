@@ -1,0 +1,17 @@
+{
+    "contents" : "---\ntitle: \"Adams Doc Text\"\nauthor: \"Adam\"\ndate: \"October 16, 2015\"\noutput: html_document\n---\n\n2.) This Dataset combines two datasets: the HYG combined bright star catalog, and a dataset which details the hex code for each stellar spectrum classification.\n\nI used these two datasets to assign a hex code value to every star in the database which had a spectrum classification.\n\nI was then able to manipulate the ggplot manual legend function to assign a color to each spectrum based on its hex code.\n\nThe resulting dataset displays the exact color of each star. The data is displayed in a way that shows each constellations spectral distribution.\n```{r}\nsource(\"../02 Data Wrangling/Workflow2.R\", echo = TRUE)\n```",
+    "created" : 1445032642377.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1824908306",
+    "id" : "BA507D90",
+    "lastKnownWriteTime" : 1445032649,
+    "path" : "~/DataVisualization/DV_RProject3/00 Doc/Adams_Doc.Rmd",
+    "project_path" : "00 Doc/Adams_Doc.Rmd",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "type" : "r_markdown"
+}
