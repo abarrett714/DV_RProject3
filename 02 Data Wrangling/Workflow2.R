@@ -38,20 +38,25 @@ for(n in names(df)) {
 #  df[n] <- data.frame(lapply(df[n], gsub, pattern="([A-Z]{1}[0-9]{1}I?!)",replacement= ""))
 #}
 
-head(df)
+#head(df)
 
 
 
 
-head(SCDF)
+#head(SCDF)
 SCDF <- rename(SCDF, spect = Class)
-head(SCDF)
+#head(SCDF)
 SCDF2 <- select(SCDF, spect, Hex)
+#head(SCDF2)
+
+head(MainDF)
+head(df)
+head(SCDF)
 head(SCDF2)
 
 #the Join!
 jdf <- left_join(df, SCDF2, by = "spect")
-head(jdf)
+#head(jdf)
 
 
 jdf <- filter(jdf, spect != "", !is.na(Hex) )
@@ -62,11 +67,11 @@ head(jdf)
 
 hexdf <- jdf['Hex']
 
-head(hexdf)
+#head(hexdf)
 hexdf <-distinct(hexdf)
 hexdf <- hexdf[,"Hex"]
-head(hexdf)
-hexdf
+#head(hexdf)
+#hexdf
 
 
 require(extrafont)
