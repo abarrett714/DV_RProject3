@@ -59,9 +59,9 @@ jdf <- left_join(df, SCDF2, by = "spect")
 #head(jdf)
 
 
-jdf <- filter(jdf, spect != "", !is.na(Hex) )
-jdf <- arrange(jdf, spect)
-jdf <- distinct(jdf)
+jdf <- jdf %>% filter(spect != "", !is.na(Hex)) %>% arrange(spect) %>% distinct()
+#jdf <- arrange(jdf, spect)
+#jdf <- distinct(jdf)
 
 head(jdf)
 
