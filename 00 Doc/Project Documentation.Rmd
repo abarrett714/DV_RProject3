@@ -1,0 +1,26 @@
+---
+title: "Project 3 Documentation"
+author: "AdamMalachiJD"
+date: "October 16, 2015"
+output: html_document
+---
+For this project we used our previous CSV, contaning data from many stars throughout the Universe. In addition to this CSV, we included another that contained data corresponding to the stellar spectrum classification each star possessed along with the Hexadecimal color code of the star. We used these two CSVs for the first two visuals.
+
+1.) The first visual comes from doing a full join of the two datasets previously mentioned, taking the previous attributes of the stars and combining the stellar spectrum classification.
+
+This visual shows the density of particular segments of the spectrum classification across the different constellations. Visually, one can see the variation in the stellar spectrum across each constellation, seeing that some harbor a wide range, while some are clustered. 
+
+```{r}
+source("../02 Data Wrangling/Workflow1.R", echo = TRUE)
+```
+
+2.) This Dataset combines two datasets: the HYG combined bright star catalog, and a dataset which details the hex code for each stellar spectrum classification.
+
+I used these two datasets to assign a hex code value to every star in the database which had a spectrum classification.
+
+I was then able to manipulate the ggplot manual legend function to assign a color to each spectrum based on its hex code.
+
+The resulting dataset displays the exact color of each star. The data is displayed in a way that shows each constellations spectral distribution.
+```{r}
+source("../02 Data Wrangling/Workflow2.R", echo = TRUE)
+```
