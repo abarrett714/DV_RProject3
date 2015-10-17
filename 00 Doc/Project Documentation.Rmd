@@ -24,3 +24,11 @@ The resulting dataset displays the exact color of each star. The data is display
 ```{r}
 source("../02 Data Wrangling/Workflow2.R", echo = TRUE)
 ```
+
+3.) The last visual combines two datasets one about the accretion of mass into what is assumed is a blackhole and the other is about the solar systems.
+
+The graphic shows the the ID of the system (categorized by size) versus the Chi squared of the system. The chi squared variable shows how stable a system is, the lower the value of chi squared the more stable the system is.
+```{r}
+source("../02 Data Wrangling/Workflow3.R", echo = TRUE)
+```
+
